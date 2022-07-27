@@ -53,3 +53,6 @@ _Note: As these stakeholders are made up (any resemblance to present people is a
 | Zachary Brooks      | Seller      | Invests in historical houses, best neighborhoods, high profits, best timing within a year, should renovate?                                                                     |
 | Timothy Stevens     | Seller      | Owns expensive houses in the center, needs to get rid, best timing within a year, open for renovation when profits rise                                                         |
 | Amy Williams        | Seller      | Italian mafiosi, sells several central houses(top10%) over time, needs average outskirt houses over time to hide from the FBI                                                   |
+
+
+a change so i can commit 
