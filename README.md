@@ -2,6 +2,12 @@
 
 Template for creating ds simple projects
 
+
+https://dev.meteostat.net/python/
+
+https://pypi.org/project/airportsdata/
+
+
 ## Requirements
 
 - pyenv
