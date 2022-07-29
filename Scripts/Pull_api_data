@@ -1,0 +1,40 @@
+"""inbuilt libs"""
+import time
+from datetime import datetime
+
+"""APIs """
+import airportsdata
+from meteostat import Point, Daily 
+
+"""Data Management"""
+import pandas as pd
+import numpy as np
+
+class Api_data:
+
+    def __init__(self, df: pd.Series) -> None:
+        self.df = df 
+        self.airports = airportsdata.load('IATA')
+
+    def pull_coor(self, airport: str,  max: int):
+        airports = airportsdata.load('IATA')
+        coor = tuple([airports[''].get(k) for k in ['lat', 'lon']])
+        return (coor[0], coor[1])
+    
+
+
+def progressbar(progress: int, total: int):
+    percent = 100 * (progress / float(total))
+    bar = '█' * int(percent) + ' ' * (100 - int(percent))
+    print(f"\r|{bar}| row {progress} of {total} rows({percent}%)", end="\r")
+
+
+if __name__ == '__main__':
+    df = pd.read_csv('./data/train.csv', nrows=100)
+    data = Api_data(df)
+    df['DATOP'] =  pd.to_datetime(df['DATOP']).dt.strftime('%Y-%m-%d').str.split('-')
+    arr_0 = df.DEPSTN.values
+    arr_1 = df.DATOP.values
+    for i in range(df.ID.count()-1):
+        progressbar(i, df.ID.count())
+        data.pull_coor(arr_0[i], df.ID.count())
